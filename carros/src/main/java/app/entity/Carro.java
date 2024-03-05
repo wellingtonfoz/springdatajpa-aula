@@ -32,6 +32,7 @@ public class Carro {
 	@NotNull(message = "Este campo não pode ser nulo")
 	private String nome;
 	private String modelo;
+	private int ano;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("carros")

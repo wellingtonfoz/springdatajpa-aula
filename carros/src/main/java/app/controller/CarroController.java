@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.entity.Carro;
@@ -99,5 +100,74 @@ public class CarroController {
 		}
 		
 	}
+	
+	
+	
+	@GetMapping("/findByNome")
+	public ResponseEntity<List<Carro>> findByNome (@RequestParam String nome){
+		
+		try {
+			
+			List<Carro> lista = this.carroService.findByNome(nome);
+			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			
+		} catch (Exception e) {
+			
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 
+		}
+		
+	}
+	
+	@GetMapping("/findByMarcaNome")
+	public ResponseEntity<List<Carro>> findByMarcaNome (@RequestParam String nome){
+		
+		try {
+			
+			List<Carro> lista = this.carroService.findByMarcaNome(nome);
+			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			
+		} catch (Exception e) {
+			
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+
+		}
+		
+	}
+	
+	@GetMapping("/buscarCarrosAcimaAno")
+	public ResponseEntity<List<Carro>> buscarCarrosAcimaAno (@RequestParam int ano){
+		
+		try {
+			
+			List<Carro> lista = this.carroService.buscarCarrosAcimaAno(ano);
+			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			
+		} catch (Exception e) {
+			
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+
+		}
+		
+	}
+	
+	@GetMapping("/findByMarca")
+	public ResponseEntity<List<Carro>> findByMarca (@RequestParam int id){
+		
+		try {
+			
+			List<Carro> lista = this.carroService.findByMarca(id);
+			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			
+		} catch (Exception e) {
+			
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+
+		}
+		
+	}
+
+	
+	
+	
 }
