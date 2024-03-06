@@ -47,7 +47,7 @@ public class CarroController {
 		try {
 			
 			String mensagem = this.carroService.update(id, carro);
-			return new ResponseEntity<String>(mensagem, HttpStatus.CREATED);
+			return new ResponseEntity<String>(mensagem, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			
@@ -63,7 +63,7 @@ public class CarroController {
 		try {
 			
 			List<Carro> lista = this.carroService.listAll();
-			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			return new ResponseEntity<>(lista, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			
@@ -109,7 +109,7 @@ public class CarroController {
 		try {
 			
 			List<Carro> lista = this.carroService.findByNome(nome);
-			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			return new ResponseEntity<>(lista, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			
@@ -125,7 +125,7 @@ public class CarroController {
 		try {
 			
 			List<Carro> lista = this.carroService.findByMarcaNome(nome);
-			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			return new ResponseEntity<>(lista, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			
@@ -141,7 +141,7 @@ public class CarroController {
 		try {
 			
 			List<Carro> lista = this.carroService.buscarCarrosAcimaAno(ano);
-			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			return new ResponseEntity<>(lista, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			
@@ -157,7 +157,7 @@ public class CarroController {
 		try {
 			
 			List<Carro> lista = this.carroService.findByMarca(id);
-			return new ResponseEntity<>(lista, HttpStatus.CREATED);
+			return new ResponseEntity<>(lista, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			

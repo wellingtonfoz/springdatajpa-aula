@@ -23,7 +23,7 @@ public class CarroService {
 	public String update(long id, Carro carro) {
 		carro.setId(id);
 		this.carroRepository.save(carro);
-		return "carro não encontrado para alterar";
+		return carro.getNome()+ " atualizado com sucesso";
 	}
 
 	public List<Carro> listAll(){
@@ -39,7 +39,7 @@ public class CarroService {
 
 	public String delete(long idCarro) {
 		this.carroRepository.deleteById(idCarro);
-		return "Não encontrado para deletar";
+		return "Carro deletado com sucesso!";
 
 	}
 	
