@@ -29,9 +29,13 @@ public class Carro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull(message = "Este campo não pode ser nulo")
+	@NotNull(message = "Nome não pode ser nulo")
 	private String nome;
+	
+	@NotNull(message = "Modelo não pode ser nulo")
 	private String modelo;
+	
+	@NotNull(message = "Ano não pode ser nulo")
 	private int ano;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
